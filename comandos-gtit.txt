@@ -1,0 +1,112 @@
+/////////////////////////////////////
+// CONFIGURACIONES DEL PROYECTO
+////////////////////////////////////
+
+Para iniciar un proyecto
+Se crea una carpeta llamada git pero esta oculta y esta toda la configuracion de git
+git init
+
+CREAR UN USUARIO
+git config --global user.name "Adrian Nunez Alanis"
+git config --global user.email adriano_alanis@hotmail.com
+
+MOSTRAR INFORMACION DE LA CUENTA
+git config --global -l
+
+AGREGAR tODOS LOS ARCHIVOS EN EL STAGING AREA
+git add .
+
+PARA PASAR TODOS A WORKING DIRECTORY
+git rm --cached 0.txt
+
+El COMMANDO COMMIT SIRVE  PARA GUARDAR UNA VERSION DE NUESTRO PROYECTO
+git commit - m "Se agrego un nuevo archivo"
+
+Mostrar todos los commits O CAMBIOS QUE que se han echo
+git log
+
+y se veran archivos cambiados y reflejados
+git status 
+
+y para recuperarlo es 
+el brakpoint es el ultimo commit que se ha echo
+si un archivo ha sido modificado y quieres que regrese como estaba desde el ultimo commit el comando es:
+git checkout -- 0.txt
+
+Mostrando los ultimos cambios que se han realizado
+git diff Nombrearchivo
+
+Ignorando archivos 
+crear un archivo que se llame .gitignore y agregamos los nombres de los archivos que no deceamos meter
+
+/////////////////////////////////////
+// RAMAS
+/////////////////////////////////////
+
+PARA VER EN QUE RAMA ESTAMOS
+git branch
+
+PARA CREAR UNA NUEVA RAMA (Mejor dicho es clonar una version de la rama que estamos enfocados)
+git branch nuevaRama
+
+PARA CAMBIARNOS DE RAMA
+git checkout ramaACambiar
+
+PARA CREAR UNA RAMA Y ESTAR TRABAJANDO EN ESA
+git checkout -b ramaNueva
+
+
+
+
+borrarlo desde git
+git rm -0.txt
+git status
+y se vera en verde que paso a stating area
+
+despues git reset HEAD 0.txt
+muestra la infotrmacion del archivo
+D       0.txt
+y para volver a recuperar el archivo es 
+git checkout --0.txt
+
+DIFERENCIAS ENTRE git rm --cached y git reset HEAD
+todo desde nuevo
+se agregan las configuraciones
+se crean 5 archivos nuevos
+se agregan todos con 
+git add . // git status /// git checkout file
+y despues se modifica uno
+y despes se agrega el archivo que se modifico
+git add 0.txt /// git 
+git status // rm --cached 0.txt
+
+
+
+/////////////////////////////////////
+// REPOSITORIOS REMOTOS
+/////////////////////////////////////
+
+AÑADIR REPOSITORIOS REMOTOS Y ASIGNAR UN NOMBRE    git remote add [nombre] [url]:
+$ git remote
+origin
+$ git remote add pb https://github.com/paulboone/ticgit
+$ git remote -v
+origin	https://github.com/schacon/ticgit (fetch)
+origin	https://github.com/schacon/ticgit (push)
+pb	https://github.com/paulboone/ticgit (fetch)
+pb	https://github.com/paulboone/ticgit (push)
+
+MOSTRARA EL NOMBRE QUE LE HE LLAMADO A UN REPOSITORIO QUE HE CLONADO POR DEFECTO ES origin
+git remote
+
+url del repositorio el cual bajamo y subimos cambios 
+git remote -v
+
+Eliminar y Renombrar Remotos
+git remote rename origin nuevoNombre
+git remote
+
+git remote rm nuevoNombre
+git remote
+
+
